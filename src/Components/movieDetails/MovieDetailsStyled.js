@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 
-export const MovieDetailsPageStyled = styled.div`
+export const MovieDetailsStyled = styled.div`
   padding: 35px;
   border-bottom: 3px solid #858080;
 

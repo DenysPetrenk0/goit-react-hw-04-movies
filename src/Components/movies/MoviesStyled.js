@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 
-export const FormStyled = styled.div`
+export const MoviesStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

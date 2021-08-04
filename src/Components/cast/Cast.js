@@ -3,6 +3,9 @@
 import React, { Component } from "react";
 import apiServices from "../../services/apiServices";
 import { CastStyled } from "./CastStyled";
+import { error } from "@pnotify/core";
+import "@pnotify/core/dist/PNotify.css";
+import "@pnotify/core/dist/BrightTheme.css";
 
 class Cast extends Component {
   state = {
@@ -11,7 +14,11 @@ class Cast extends Component {
 
   async componentDidMount() {
     const { id } = this.props.match.params;
-    const response = await apiServices.fetchCast(id);
+    const response = await apiServices.fetchCast(id).catch(() => {
+      error({
+        text: "oops something went wrong!!!!!!!!!!!",
+      });
+    });
     this.setState({ cast: response.data.cast });
   }
 

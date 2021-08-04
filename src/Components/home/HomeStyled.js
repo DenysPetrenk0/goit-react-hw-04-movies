@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 
-export const HomePageStyled = styled.div`
+export const HomeStyled = styled.div`
   .popMoviesList {
     display: flex;
     margin-left: -15px;

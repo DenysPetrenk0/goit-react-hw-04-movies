@@ -12,9 +12,11 @@ const fetchPopularMovie = () => {
 };
 
 const fetchMovieDetails = (id) => {
-  return axios.get(`
+  return axios.get(
+    `
     ${BASE_URL}${id}?api_key=${API_KEY}&language=en-US
-  `);
+  `
+  );
 };
 
 const fetchCast = (id) => {

@@ -2,6 +2,9 @@
 
 import React, { Component } from "react";
 import apiServices from "../../services/apiServices";
+import { error } from "@pnotify/core";
+import "@pnotify/core/dist/PNotify.css";
+import "@pnotify/core/dist/BrightTheme.css";
 
 class Reviews extends Component {
   state = {
@@ -10,7 +13,11 @@ class Reviews extends Component {
 
   async componentDidMount() {
     const { id } = this.props.match.params;
-    const response = await apiServices.fetchReviews(id);
+    const response = await apiServices.fetchReviews(id).catch(() => {
+      error({
+        text: "oops something went wrong!!!!!!!!!!!",
+      });
+    });
     this.setState({ reviews: response.data.results });
   }
 
